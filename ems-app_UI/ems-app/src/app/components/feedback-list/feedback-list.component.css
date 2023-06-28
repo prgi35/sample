@@ -1,0 +1,26 @@
+.buttonMain{
+    display: flex;
+}
+.panel-heading {
+    background-color: #428bca;
+    padding: 1%;
+    margin: 0%;
+    width: 102.8%;
+    margin-left: -15px;
+}
+.panel-title{
+    font-size: 20px;
+}
+.btn3{
+    width: 200px;
+}
+.container{
+    width: 250%;
+    /* margin-left: 15%; */
+    margin-left: 13.5%;
+    border: 2px solid rgb(111, 216, 240);
+    
+    padding-bottom: 2%;
+    justify-content: center;
+   
+}

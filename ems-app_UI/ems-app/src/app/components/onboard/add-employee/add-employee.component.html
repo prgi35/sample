@@ -1,0 +1,155 @@
+<div id="sidebar-wrapper" style="margin-top: 60px;">
+    <app-side-navigation></app-side-navigation>
+</div>
+
+<div class="col-md-10">
+    <h3>
+        <b>Add New Employee</b>
+    </h3>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <form [formGroup]="emp" (ngSubmit)="onSubmit()">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Onboard Form</h3>
+            </div>
+            <div class="left">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="form-group row">
+                        <label for="employeeId" class="col-sm-2 col-form-label">Employee Id </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control input-sm" formControlName="yashEmpId"
+                                placeholder="Enter Employee Id">
+                        </div>
+                        <label for="employeeName" class="col-sm-2 col-form-label">Employee Name </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control input-sm" placeholder="Enter Name"
+                                formControlName="employeeName"
+                                [ngClass]="{'is-invalid':submitted && emp.controls.employeeName.errors}">
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="grade" class="col-sm-2 col-form-label">Grade </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control input-sm" formControlName="grade"
+                                placeholder="Enter Grade">
+                        </div>
+
+                        <label for="designation" class="col-sm-2 col-form-label">Designation </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control input-sm" formControlName="designation"
+                                placeholder="Enter Designation">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-4">
+                            <input type="email" class="form-control input-sm" formControlName="email"
+                                placeholder="Enter Email">
+                        </div>
+
+
+                        <label for="dateOfJoining" class="col-sm-2 col-form-label">Date Of Joining </label>
+                        <div class="col-sm-4">
+                            <input type="Date" class="form-control input-sm" formControlName="dateOfJoining">
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="baseLocation" class="col-sm-2 col-form-label">Base Location</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" formControlName="baseLocation">
+                                <option value="">-- select base location --</option>
+                                <option>Indore (CST)</option>
+                                <option>Indore (Super Corridore)</option>
+                                <option>Hinjewadi(pune)</option>
+                                <option>magarpatta(pune)</option>
+                                <option>Pune Commerzone</option>
+                                <option>Hyderabad</option>
+                                <option>Jaipur</option>
+                                <option>Chennai</option>
+                                <option>Gurugram</option>
+                                <option>Telangana</option>
+                            </select>
+                        </div>
+                        <label for="currentLocation" class="col-sm-2 col-form-label">Current Location</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" formControlName="currentLocation">
+                                <option value="">-- select current location --</option>
+                                <option>Indore (CST)</option>
+                                <option>Indore (Super Corridore)</option>
+                                <option>Hinjewadi(pune)</option>
+                                <option>magarpatta(pune)</option>
+                                <option>Pune Commerzone</option>
+                                <option>Hyderabad</option>
+                                <option>Jaipur</option>
+                                <option>Chennai</option>
+                                <option>Gurugram</option>
+                                <option>Telangana</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="primarySkill" class="col-sm-2 col-form-label">Primary Skills</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" formControlName="primarySkills">
+                                <option value="">-- select primary skills --</option>
+                                <option>JAVA</option>
+                                <option>Python</option>
+                                <option>C</option>
+                                <option>C#</option>
+                            </select>
+                        </div>
+
+                        <label for="secondarySkill" class="col-sm-2 col-form-label">Secondary Skill</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" formControlName="secondarySkills">
+                                <option value="">-- select secondary skills --</option>
+                                <option value="Spring">Spring</option>
+                                <option value="Spring Boot">Spring Boot</option>
+                                <option value="Angular">Angular</option>
+                                <option value="React">React</option>
+                                <option value="AWS">AWS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="experience" class="col-sm-2 col-form-label">Experience </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control input-sm" formControlName="exprience"
+                                placeholder="Enter Experience">
+                        </div>
+                        <label for="mobileNumber" class="col-sm-2 col-form-label">Mobile Number</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="mobileNo" class="form-control input-sm" formControlName="mobileNo"
+                                placeholder="Enter Mobile Number">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="irm" class="col-sm-2 col-form-label">IRM</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" formControlName="irm">
+                                <option value="">-- please select IRM --</option>
+                                <option value="Mr. Maruti Lavate">Mr. Maruti Lavate</option>
+                                <option value="Mamata Sankla">Mamata Sankla</option>
+                                <option value="Mr. Milind Rumale">Mr. Milind Rumale</option>
+                                <option value="Snehal Pawar">Snehal Pawar</option>
+                            </select>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <br><br>
+           
+            </div>
+        </div>
+    </form>
+</div>

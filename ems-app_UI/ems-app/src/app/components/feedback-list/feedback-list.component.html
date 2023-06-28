@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<div id="sidebar-wrapper" style="margin-top: 100px;">
+    <app-side-navigation></app-side-navigation>
+</div>
+<div class="container-md" style="margin-top:-50px; " >
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Feedback List</h3>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Feedback ID</th>
+                <th>Employee ID</th>
+                <th>Project Name</th>
+                <th>Client Name</th>
+                <th>Project Manager</th>
+                <th>Reason For Release</th>
+                <th>Technical Knowledge Rating</th>
+                <th>Work Quality Rating</th>
+                <th>Communication Rating</th>
+                <th>Team Playing Rating</th>
+                <th>Overall Rating</th>
+                <th>Remarks</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let feedback of feedbacks">
+                <td>{{feedback.feedback_id}}</td>
+                <td>{{feedback.employee_id}}</td>
+                <td>{{feedback.project_name}}</td>
+                <td>{{feedback.client_name}}</td>
+                <td>{{feedback.project_manager}}</td>
+                <td>{{feedback.reason_for_release}}</td>
+                <td>{{feedback.technical_knowledge_rating}}</td>
+                <td>{{feedback.work_quality_rating}}</td>
+                <td>{{feedback.communication_rating}}</td>
+                <td>{{feedback.team_playing_rating}}</td>
+                <td>{{feedback.overall_rating}}</td>
+                <td>{{feedback.remarks}}</td>
+                <td>
+                    <div class="buttonMain">
+                        <div class="button1">
+                            <button (click)="updateFeedback(feedback.feedback_id)" style="margin-right: 5px;"
+                                class="btn btn-outline-info">Update</button>
+                        </div>
+                        <div class="button2">
+                            <button (click)="deleteFeedback(feedback.feedback_id)"
+                                class="btn btn-outline-danger">Delete</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <br>
+        </tbody>
+    </table>
+    <div class="btn3">
+        <button routerLink="/createFeedback" class="btn btn-outline-info">Add Feedback</button>
+    </div>
+</div>
+
+</div>
+    

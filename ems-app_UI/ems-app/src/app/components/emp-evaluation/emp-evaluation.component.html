@@ -1,0 +1,106 @@
+<app-header></app-header>
+<div id="sidebar-wrapper" style="margin-top: 60px;">
+    <app-side-navigation></app-side-navigation>
+</div>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+    <form [formGroup]="evaluationForm" class="example-form">
+        <div class="panel panel-primary" style="margin-left:125px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Employee Evaluation </h3>
+            </div>
+
+                <div class="card">
+                    <div style="font-size: large; font-weight: 600; display: flex;" class="card-header">
+                        Employee Details
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label style="text-align: left;" class="col-sm-2 col-form-label">
+                                Employee Id :
+                            </label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control input-sm" list="resourceList" id="empEvaluationId" formControlName="empEvaluationId" placeholder="Type to Search ID" required>
+                                <datalist id="resourceList">
+                                  <option *ngFor="let resourceId of resourceEmpIdList" [value]="resourceId"></option>
+                                </datalist>
+                            </div>
+                            <br><br>
+                            <label style="text-align: left;" class="col-sm-2 col-form-label">
+                                Evaluation Date:
+                            </label>
+
+                            <div class="col-sm-4">
+
+                                <input type="Date" class="form-control input-sm" id="evaluationDate"
+                                    formControlName="evaluationDate">
+                            </div>
+                            <label style="text-align: left;" class="col-sm-2 col-form-label">
+                                Evaluation No. :</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control input-sm" id="evaluationNumber"
+                                    formControlName="evaluationNumber" placeholder="" required>
+                            </div>
+                            <label style="text-align: left;" class="col-sm-2 col-form-label">
+                                Evaluated By:
+                            </label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control input-sm" id="evaluatedBy"
+                                    formControlName="evaluatedBy" placeholder="" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div style="font-size: large; font-weight: 600; display: flex;" class="card-header">
+                        Skill Rating
+                    </div>
+                    <div class="card-body">
+                        <div *ngFor="let data of skillList">
+                            <label style="text-align: left;" class="col-sm-2 col-form-label">
+                                {{data.skillName}}
+                                <select id="skill_id" class="form-control" [formControlName]="getFormControl(data)">
+                                    <option value={{rating.ratingId}} *ngFor="let rating of data.ratingList">
+                                        {{rating.ratingLabel}}</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div style="font-size: large; font-weight: 600; display: flex;" class="card-header">
+                        Overall Rating
+                    </div>
+
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label style="text-align: left;" class="col-sm-4 col-form-label">
+                                Overall Rating
+                                <select id="skill_id" formControlName="overallRating">
+                                    <option value={{rating.ratingId}} *ngFor="let rating of ratingList">
+                                        {{rating.ratingLabel}}</option>
+                                </select>
+                            </label>
+                            <label style="text-align: right" class="col-sm-2 col-form-label">Remark :
+                            </label>
+                            <div class="col-sm-4">
+                                <!-- <input type="number" class="form-control input-sm" id="emp_evaluation_id" formControlName="emp_evaluation_id" placeholder="" required> -->
+
+                                <textarea class="form-control input-sm" id="remark" formControlName="remarks"
+                                    placeholder="" required></textarea>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+            <div><button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit
+            </button>&nbsp;&nbsp;<br><br></div>
+        </div>
+
+    </form>
+</div>

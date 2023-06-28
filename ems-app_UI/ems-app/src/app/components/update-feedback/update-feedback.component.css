@@ -1,0 +1,49 @@
+.row {
+    display: flex;
+    /* text-align: center; */
+}
+
+.panel-heading {
+    background-color: #428bca;
+    width: 106.5%;
+    margin-left: -15px;
+   
+}
+.panel-title{
+    font-size: 20px;
+}
+.panel-body{
+    width: 100%;
+   
+}
+.form1{
+    width: 100%;
+    display: flex;
+   
+    margin-left: 10px;
+}
+.form2{
+    margin-left: 350px;
+    width: 40%;
+}
+.form3{
+    
+    width: 101%;
+}
+/* .btn3{
+    padding: 5px 10px;
+} */
+.container{
+    width: 70%;
+    justify-content: center;
+    margin-left: 21%;
+    border: 2px solid rgb(111, 216, 240);
+    padding-right: 3% ;
+    height: 700px;
+   
+   
+    
+}
+.container label{
+    font-size: medium;
+}

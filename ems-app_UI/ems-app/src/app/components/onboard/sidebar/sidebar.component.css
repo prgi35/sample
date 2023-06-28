@@ -1,0 +1,11 @@
+.sidebar{
+    font-size: 25px;
+    height: 100%;
+    background-color:#428BCA;
+    color: white;
+}
+
+.nav-item span{
+    color: white;
+   
+}

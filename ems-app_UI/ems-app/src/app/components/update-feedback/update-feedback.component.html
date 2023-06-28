@@ -1,0 +1,132 @@
+<app-header></app-header>
+<div id="sidebar-wrapper" style="margin-top: 50px;">
+    <app-side-navigation></app-side-navigation>
+</div>
+
+<div class="container">
+    <div class="panel-heading">
+        <h3 class="panel-title">Update Feedback</h3>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <form (ngSubmit)="onsubmit()">
+        <div class="panel-body">
+            <div class="form1">
+                <div>
+                    <div class="form-group row">
+                        <label style="margin-left: -75px;">Feedback Id</label>
+                        <div>
+                            <input type="text" class="form-control" id="feedback_id" [(ngModel)]="feedback.feedback_id"
+                                name="feedback_id" size="35">
+                        </div>
+                    </div>
+
+                    <div class="form-group row ">
+                        <label style="margin-left: -75px;">Employee Id</label>
+                        <div>
+                            <input type="text" class="form-control" id="employee_id" [(ngModel)]="feedback.employee_id"
+                                name="employee_id" size="35">
+                        </div>
+                    </div>
+                    <div class="form-group row ">
+                        <label style="margin-left: -75px;">Project Name</label>
+                        <div>
+                            <input type="text" class="form-control" id="project_name"
+                                [(ngModel)]="feedback.project_name" name="project_name" size="35">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label style="margin-left: -80px;">Client Name</label>
+                        <div>
+                            <input type="text" class="form-control" id="client_name" [(ngModel)]="feedback.client_name"
+                                name="client_name" size="35">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label style="margin-left: -65px;">Project Manager</label>
+                        <div>
+                            <input type="text" class="form-control" id="project_manager"
+                                [(ngModel)]="feedback.project_manager" name="project_manager" size="35">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form2">
+                    <div class="form-group row">
+                        <label style="margin-left: -10px;">Technical Knowledge Rating</label>
+                        <select (change)="onSelectTech($event)" class="form-control"
+                            aria-label="Default select example">
+                            <option value="feedback.technical_knowledge_rating">{{feedback.technical_knowledge_rating}}
+                            </option>
+                            <option *ngFor="let rating of ratings" [value]="rating.ratingId">{{ rating.ratingLabel }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row">
+                        <label style="margin-left: -40px;">Work Quality Rating</label>
+                        <select (change)="onSelectWork($event)" class="form-control"
+                            aria-label="Default select example">
+                            <option value="feedback.work_quality_rating">{{feedback.work_quality_rating}}</option>
+                            <option *ngFor="let rating of ratings" [value]="rating.ratingId">{{ rating.ratingLabel }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row">
+                        <label style="margin-left: -30px;">Communication Rating</label>
+                        <select (change)="onSelectCom($event)" class="form-control" aria-label="Default select example">
+                            <option value="feedback.communication_rating">{{feedback.communication_rating}}</option>
+                            <option *ngFor="let rating of ratings" [value]="rating.ratingId">{{ rating.ratingLabel }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row">
+                        <label style="margin-left: -40px;">Team Playing Rating</label>
+                        <select (change)="onSelectTeam($event)" class="form-control"
+                            aria-label="Default select example">
+                            <option value="feedback.team_playing_rating">{{feedback.team_playing_rating}}</option>
+                            <option *ngFor="let rating of ratings" [value]="rating.ratingId">{{ rating.ratingLabel }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row">
+                        <label style="margin-left: -65px;">Overall Rating</label>
+
+                        <select (change)="onSelectOver($event)" class="form-control"
+                            aria-label="Default select example">
+                            <option value="feedback.overall_rating">{{feedback.overall_rating}}</option>
+                            <option *ngFor="let rating of ratings" [value]="rating.ratingId">{{ rating.ratingLabel }}
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+                <!-- </form> -->
+            </div>
+            <br>
+            <div class="form3">
+                <div class="form-group row">
+                    <label style="margin-left: -330px;">Reason For Realease</label>
+                    <div>
+                        <input type="text" class="form-control" id="reason_for_release"
+                            [(ngModel)]="feedback.reason_for_release" name="reason_for_release">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label style="margin-left: -380px;">Remark</label>
+                <input type="text" class="form-control" id="remarks" [(ngModel)]="feedback.remarks" name="remarks">
+            </div>
+      
+      
+            <button class="btn btn-success" type="submit">Submit</button>
+            <button routerLink="/feedbackList" class="btn btn-info" style="margin-left: 200px;">Feedback
+                List</button>
+        </div>

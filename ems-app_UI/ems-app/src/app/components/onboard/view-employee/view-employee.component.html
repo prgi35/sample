@@ -1,0 +1,98 @@
+<div id="sidebar-wrapper" style="margin-top: 60px">
+  <app-side-navigation></app-side-navigation>
+</div>
+
+<div class="col-md-10">
+  <button
+    class="btn btn-primary"
+    style="float: right; margin-top: 10px"
+    routerLink="/onboard/add"
+    routerLinkActive="active"
+  >
+    Add New Employee
+  </button>
+  <h2><b> All Employees</b></h2>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+  <link
+    href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+    rel="stylesheet"
+    id="bootstrap-css"
+  />
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <div class="container tbl-container">
+    <div class="row tbl-fixed">
+      <table class="table-striped table-condensed">
+        <thead>
+          <tr>
+            <th>Yash Employee Id</th>
+            <th>Employee Name</th>
+            <th>Grade</th>
+            <th>Designation</th>
+            <th>Email</th>
+            <th>Date Of Joining</th>
+            <th>Base Location</th>
+            <th>Current Location</th>
+            <th>primary Skills</th>
+            <th>Secondary Skills</th>
+            <th>Exprience</th>
+            <th>Mobile No</th>
+            <th>IRM</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="employee.length === 0; else employeeData">
+            <td>No data avaliable</td>
+          </tr>
+
+          <ng-template #employeeData>
+            <tr *ngFor="let emp of employee">
+              <td>{{ emp.yashEmpId }}</td>
+
+              <td>{{ emp.employeeName }}</td>
+
+              <td>{{ emp.grade }}</td>
+
+              <td>{{ emp.designation }}</td>
+
+              <td>{{ emp.email }}</td>
+
+              <td>{{ emp.dateOfJoining }}</td>
+
+              <td>{{ emp.baseLocation }}</td>
+
+              <td>{{ emp.currentLocation }}</td>
+
+              <td>{{ emp.primarySkills }}</td>
+
+              <td>{{ emp.secondarySkills }}</td>
+
+              <td>{{ emp.exprience }}</td>
+
+              <td>{{ emp.mobileNo }}</td>
+
+              <td>{{ emp.irm }}</td>
+
+              <td>
+                <button
+                  (click)="updateEmployee(emp.employeeId)"
+                  class="btn btn-primary"
+                >
+                  Update
+                </button>
+                <button
+                  (click)="deleteEmployee(emp.employeeId)"
+                  class="btn btn-secondary"
+                  style="margin-left: 5px"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </ng-template>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

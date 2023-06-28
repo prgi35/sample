@@ -1,0 +1,19 @@
+.content-wrap{
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .panel.panel-default{
+    margin-left:2px;
+    margin-right:30px;
+  }
+  .panel-heading{
+    background-color: #3661ef;
+  }
+  .panel.panel-primary{
+  align-items: center;
+  /* margin-left: 10px; */
+  margin-right: 10px;
+  }
+  .label{
+    align-items: start;
+  }

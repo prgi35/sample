@@ -1,0 +1,97 @@
+<div id="sidebar-wrapper" style="margin-top: 60px;">
+    <app-side-navigation></app-side-navigation>
+</div>
+<div class="col-md-10">
+    <h3>
+        <b>Update Employee Details</b>
+    </h3>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <form *ngIf="employee" (submit)="updateData()">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Update Form</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="form-group row">
+                        <label for="employeeName" class="col-sm-2 col-form-label">Employee Name</label>
+                        <div class="col-sm-4">
+                            <input type="text" [(ngModel)]="employee.employeeName" name="employeeName"
+                                class="form-control" class="form-control" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <label for="grade" class="col-sm-2 col-form-label">Grade</label>
+                        <div class="col-sm-4">
+                            <input type="text" [(ngModel)]="employee.grade" name="grade" placeholder="Enter Grade"
+                                class="form-control" [ngModelOptions]="{standalone: true}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="designation" class="col-sm-2 col-form-label">Designation</label>
+                        <div class="col-sm-4">
+                            <input type="text" [(ngModel)]="employee.designation" name="designation"
+                                class="form-control" [ngModelOptions]="{standalone: true}">
+                        </div>
+
+                        <label for="email" class="col-sm-2 col-form-label">Email address</label>
+                        <div class="col-sm-4">
+                            <input type="email" [(ngModel)]="employee.email" name="email" class="form-control"
+                                [ngModelOptions]="{standalone: true}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="dateOfJoining" class="col-sm-2 col-form-label">Date Of Joining</label>
+                        <div class="col-sm-4">
+                            <input type="text" [(ngModel)]="employee.dateOfJoining" name="dateOfJoining"
+                                class="form-control" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <label for="baseLocation" class="col-sm-2 col-form-label">Base Location</label>
+                        <div class="col-sm-4">
+                            <input type="text" [(ngModel)]="employee.baseLocation" name="baseLocation"
+                                class="form-control" [ngModelOptions]="{standalone: true}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="currentLocation" class="col-sm-2 col-form-label">Current Location</label>
+                        <div class="col-sm-4">
+                            <input type="text" [(ngModel)]="employee.currentLocation" name="currentLocation"
+                                class="form-control" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <label for="primarySkills" class="col-sm-2 col-form-label">Primary Skills</label>
+                        <div class="col-sm-4">
+                            <input type="text" [(ngModel)]="employee.primarySkills" name="primarySkills"
+                                class="form-control" [ngModelOptions]="{standalone: true}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="secondarySkills" class="col-sm-2 col-form-label">Secondary Skills</label>
+                        <div class="col-sm-4">
+                            <input type="text" [(ngModel)]="employee.secondarySkills" name="secondarySkills"
+                                class="form-control" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <label for="exprience" class="col-sm-2 col-form-label">Exprience</label>
+                        <div class="col-sm-4">
+                            <input type="text" [(ngModel)]="employee.exprience" name="exprience" class="form-control"
+                                [ngModelOptions]="{standalone: true}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="mobileNo" class="col-sm-2 col-form-label">Mobile No</label>
+                        <div class="col-sm-4">
+                            <input type="text" [(ngModel)]="employee.mobileNo" class="form-control"
+                                [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <label for="irm" class="col-sm-2 col-form-label">IRM</label>
+                        <div class="col-sm-4">
+                            <input type="text" [(ngModel)]="employee.irm" name="irm" class="form-control"
+                                [ngModelOptions]="{standalone: true}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" style="margin-bottom: 10px;" class="btn btn-primary">Update</button>
+        </div>
+
+    </form>
+</div>
